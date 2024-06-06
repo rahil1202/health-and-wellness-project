@@ -27,6 +27,7 @@ This project aims to create a comprehensive platform for health and wellness pra
 
 ## Project Design
 
+```
 +---------------------+              +----------------------+              +----------------------+
 |      Frontend       |              |       Backend        |              |      Database        |
 |  (React Components) |              |  (Spring Controllers)|              |     (MySQL Tables)   |
@@ -42,7 +43,7 @@ This project aims to create a comprehensive platform for health and wellness pra
 |  +---------------+  |              |  +----------------+  |              |  +----------------+  |
 |  ...               |              |  ...                |              |  ...                |
 +---------------------+              +----------------------+              +----------------------+
-
+```
 
 ## Project Structure
 
@@ -130,6 +131,7 @@ backend/
 
 ## Component Diagram
 
+```
 +-----------------------------------------------------------+
 |                       Cloud Infrastructure                |
 |  +----------------+     +----------------+                |
@@ -156,7 +158,7 @@ backend/
 |                      |  (for Analytics)  |                |
 |                      +-------------------+                |
 +-----------------------------------------------------------+
-
+```
 
 ## High-Level System Design
 
