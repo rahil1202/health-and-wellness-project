@@ -25,7 +25,7 @@ This project aims to create a comprehensive platform for health and wellness pra
 
 
 
-## Project Design
+# Project Design
 
 ## System Architecture
    ![image](https://github.com/rahil1202/health-and-wellness-project/assets/104057403/8d070c13-2acf-425b-8a32-3797ff3c9df2)
