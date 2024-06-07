@@ -27,138 +27,38 @@ This project aims to create a comprehensive platform for health and wellness pra
 
 ## Project Design
 
-```
-+---------------------+              +----------------------+              +----------------------+
-|      Frontend       |              |       Backend        |              |      Database        |
-|  (React Components) |              |  (Spring Controllers)|              |     (MySQL Tables)   |
-|                     |              |                      |              |                      |
-|  +---------------+  |   HTTP API   |  +----------------+  |  JPA Queries |  +----------------+  |
-|  | Login.js       |<------------->|  | AuthController  |<------------->|  | Practitioners   |  |
-|  +---------------+  |              |  +----------------+  |              |  +----------------+  |
-|  +---------------+  |              |  +----------------+  |              |  +----------------+  |
-|  | Signup.js      |<------------->|  | ApptController  |<------------->|  | Appointments    |  |
-|  +---------------+  |              |  +----------------+  |              |  +----------------+  |
-|  +---------------+  |              |  +----------------+  |              |  +----------------+  |
-|  | Dashboard.js   |<------------->|  | AnalyticsCtrl   |<------------->|  | Analytics       |  |
-|  +---------------+  |              |  +----------------+  |              |  +----------------+  |
-|  ...               |              |  ...                |              |  ...                |
-+---------------------+              +----------------------+              +----------------------+
-```
+## System Architecture
+   ![image](https://github.com/rahil1202/health-and-wellness-project/assets/104057403/8d070c13-2acf-425b-8a32-3797ff3c9df2)
 
-## Project Structure
-
-### Frontend
-
-```
-frontend/
-├── public/
-│   ├── index.html
-│   ├── favicon.ico
-│   └── manifest.json
-├── src/
-│   ├── components/
-│   │   ├── Authentication/
-│   │   │   ├── Login.js
-│   │   │   ├── Signup.js
-│   │   │   ├── ForgotPassword.js
-│   │   ├── Dashboard/
-│   │   │   ├── Home.js
-│   │   │   ├── Appointments.js
-│   │   │   ├── Analytics.js
-│   │   │   ├── WebsiteAnalytics.js
-│   │   │   ├── SEOStats.js
-│   │   │   ├── Messages.js
-│   │   │   ├── Reviews.js
-│   │   │   ├── WebsiteEditor.js
-│   │   │   ├── BlogManager.js
-│   │   │   ├── SocialMedia.js
-│   │   │   ├── Profile.js
-│   │   ├── CheckIn/
-│   │   │   ├── CheckIn.js
-│   │   │   ├── Confirmation.js
-│   ├── pages/
-│   │   ├── Dashboard.js
-│   │   ├── Login.js
-│   │   ├── Signup.js
-│   │   ├── ForgotPassword.js
-│   │   ├── CheckIn.js
-│   ├── App.js
-│   ├── index.js
-│   ├── api/
-│   │   ├── api.js
-│   ├── styles/
-│   │   ├── styles.css
-│   ├── utils/
-│       ├── helpers.js
-```
-
-### Backend
-
-```
-backend/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── com/
-│   │   │   │   ├── healthwellness/
-│   │   │   │   │   ├── controller/
-│   │   │   │   │   │   ├── AuthController.java
-│   │   │   │   │   │   ├── AppointmentController.java
-│   │   │   │   │   │   ├── AnalyticsController.java
-│   │   │   │   │   ├── model/
-│   │   │   │   │   │   ├── Practitioner.java
-│   │   │   │   │   │   ├── Patient.java
-│   │   │   │   │   ├── repository/
-│   │   │   │   │   │   ├── PractitionerRepository.java
-│   │   │   │   │   │   ├── PatientRepository.java
-│   │   │   │   │   ├── service/
-│   │   │   │   │   │   ├── PractitionerService.java
-│   │   │   │   │   │   ├── PatientService.java
-│   │   │   │   │   ├── utils/
-│   │   │   │   │   │   ├── JwtUtil.java
-│   │   ├── resources/
-│   │   │   ├── application.properties
-│   │   │   ├── schema.sql
-│   │   │   ├── data.sql
-│   ├── test/
-│       ├── java/
-│           ├── com/
-│               ├── healthwellness/
-│                   ├── controller/
-│                       ├── AuthControllerTest.java
-│                       ├── AppointmentControllerTest.java
-```
 
 ## Component Diagram
+![image](https://github.com/rahil1202/health-and-wellness-project/assets/104057403/83cfad02-2e26-4392-8457-cc1801884772)
 
-```
-+-----------------------------------------------------------+
-|                       Cloud Infrastructure                |
-|  +----------------+     +----------------+                |
-|  |   Load Balancer|     |   CDN          |                |
-|  +-------+--------+     +-------+--------+                |
-|          |                      |                         |
-|          |                      |                         |
-|  +-------v--------+    +--------v------+                  |
-|  |   Frontend     |    |   Backend      |                  |
-|  |  (React.js)    |    | (Spring Boot)  |                  |
-|  +-------+--------+    +--------+-------+                  |
-|          |                      |                         |
-|          |                      |                         |
-|  +-------v--------+    +--------v-------+   +------------+ |
-|  |   External     |    |   Database     |   | Third-Party| |
-|  |   Services     |    | (PostgreSQL)   |   | Services   | |
-|  | (Google, Yelp, |    +--------+-------+   | (Twilio,   | |
-|  | Dialogflow,    |             |           | SendGrid)  | |
-|  | Analytics, SEO)|             |           +------------+ |
-|  +----------------+             |                         |
-|                                 |                         |
-|                      +----------v--------+                |
-|                      |  Data Warehouse   |                |
-|                      |  (for Analytics)  |                |
-|                      +-------------------+                |
-+-----------------------------------------------------------+
-```
+
+## Database Schema
+![image](https://github.com/rahil1202/health-and-wellness-project/assets/104057403/8b179add-cfc2-40fd-9511-e0983911801d)
+
+
+## User Authentication Flow
+![image](https://github.com/rahil1202/health-and-wellness-project/assets/104057403/c0a4df90-d54d-4a72-bfec-3adad0414e8c)
+
+
+## Appointment Booking Flow
+![image](https://github.com/rahil1202/health-and-wellness-project/assets/104057403/d1d5ab3b-60b9-416c-90c0-d8440c77040f)
+
+
+## Patient Check-in Flow
+![image](https://github.com/rahil1202/health-and-wellness-project/assets/104057403/0ead7c1a-ccb3-4f23-bf6b-c783139d8fcd)
+
+
+## Analytics Processing Flow
+![image](https://github.com/rahil1202/health-and-wellness-project/assets/104057403/9883a61c-02ea-498d-9043-a4bcaf4beb3c)
+
+
+## Online Reputation Management Flow
+![image](https://github.com/rahil1202/health-and-wellness-project/assets/104057403/df6e8cb7-66d8-4da5-8489-850c905aac54)
+
+
 
 ## High-Level System Design
 
@@ -172,28 +72,6 @@ The platform follows a typical client-server architecture with the following com
 
 3. **Database:** A MySQL relational database that stores all persistent data related to practitioners, patients, appointments, analytics, and more.
 
-### Key Components
-
-- **Authentication:**
-  - User signup, login, and password management
-  - JWT-based authentication
-
-- **Practitioner Dashboard:**
-  - Home/Dashboard: Overview of key metrics
-  - Appointments Calendar: Manage appointments
-  - Practice Analytics: View monthly patient acquisition and revenue stats
-  - Website Analytics: Track website visitors and conversion rates
-  - SEO Stats: Monitor search engine rankings
-  - Messages/Chatbots: Interact with patients
-  - Online Reputation Manager: Manage patient reviews
-  - Website Editor: Make changes to the website
-  - Blog Manager: Review and edit blog posts
-  - Social Media Post Management: Manage social media posts
-  - Profile Settings: Update profile information
-
-- **Patient Check-in App:**
-  - Check-in: Patients can check in on arrival
-  - Check-in Confirmation: Display confirmation message
 
 ## Project Features
 
